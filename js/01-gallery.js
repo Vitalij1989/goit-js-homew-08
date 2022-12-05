@@ -3,9 +3,10 @@ import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 // Add imports above this line
-console.log(SimpleLightbox);
 import { galleryItems } from './gallery-items';
 // Change code below this line
+
+console.log(galleryItems);
 
 const gallery = document.querySelector('.gallery');
 
@@ -13,7 +14,7 @@ const galleryMakeList = galleryItems
   .map(item => {
     return `<a class="gallery__item" href="${item.original}">
   <img class="gallery__image" src="${item.preview}" alt="${item.description}" />
-</a>  `;
+</a>    `;
   })
   .join('');
 
@@ -23,4 +24,3 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
-console.log('123');
